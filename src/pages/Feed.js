@@ -23,7 +23,7 @@ class Feed extends Component {
     return (
       <section id="post-list">
         { this.state.feed.map(post => (
-          <article>
+          <article key={ post._id }>
             <header>
               <div className="user-info">
                 <span>{ post.author }</span>
@@ -36,7 +36,7 @@ class Feed extends Component {
             <img src={ `http://localhost:3333/files/${post.image}` } alt=""/>
         
             <footer>
-              <div classname="actions">
+              <div className="actions">
                 <img src={like} alt=""/>
                 <img src={comment} alt=""/>
                 <img src={send} alt=""/>
